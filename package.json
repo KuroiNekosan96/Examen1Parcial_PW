@@ -1,0 +1,16 @@
+{
+  "name": "examen_1parcial_pw",
+  "version": "1.0.0",
+  "description": "\"Examen primer parcial-Plataformas Web\"",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dorival Pichamba",
+  "license": "ISC",
+  "dependencies": {
+    "csv-parser": "^2.3.2",
+    "fast-csv": "^3.4.0",
+    "yargs": "^14.2.0"
+  }
+}
