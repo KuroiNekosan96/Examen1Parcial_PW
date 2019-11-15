@@ -6,21 +6,20 @@ let opt = {
     },
     anio: {
         alias: 'y',
-        default: 4,
+        default: 1960,
         description: 'Año que del que se busca información '
     },
     pais: {
         alias: 'c',
-        default: 10,
+        default: "ECU",
         description: 'Código del país que se requiere información'
     }
 
 }
 
 const argv = require('yargs')
-    .command('crear', 'crea un archivo con la tabla de multiplicar', opt)
-    .command('listar', 'lista un archivo con la tabla de multiplicar', opt)
-    .command('listar', 'lista un archivo con la tabla de multiplicar', opt)
+    .command('mostrar', 'Muestra la busqueda del archivo', opt)
+    .command('guardar', 'Guarda los datos del archivo', opt)
     .help()
     .argv;
 

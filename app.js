@@ -1,17 +1,21 @@
 const { argv } = require('./config/yargs')
-const colors = require('colors')
+
 
 let comando = argv._[0]
 console.log(argv);
 
-'use strict'
-const csv = require('csv-parser');
-const fs = require('fs');
-const filepath = "datos.csv"
-fs.createReadStream(filepath)
-    .on('error', () => {})
-    .pipe(csv())
-    .on('data', (row) => {
-        console.log(row);
-    })
-    .on('end', () => {})
+switch (comando) {
+    case 'mostrar':
+        buscarDato(argv.file, argv.anio, argv.pais)
+
+        break;
+    case 'guardar':
+
+        crearArchivo(argv.file, argv.pais, argv.anio)
+            .then(archivo => console.log(`Archivo creado: ${archivo}.green`))
+            .catch(e => console.log(e.red));
+
+        break;
+    default:
+        console.log("comando no valido!");
+}
